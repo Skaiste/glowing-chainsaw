@@ -12,16 +12,20 @@
     body {
       position: relative;
       font-size: 16px;
+      margin-bottom: 100px;
     }
     img {
       max-width: 100%;
     }
-    .table {
-      width: 80%;
-    }
     #navigation {
       position: fixed;
       margin-top: 100px;
+    }
+    #referenceList {
+      display: none;
+    }
+    .glyphicon {
+      font-size: large;
     }
   </style>
 </head>
@@ -128,8 +132,8 @@
           <h3>Thank you for participating in this tutorial!</h3>
         </div>
         <div class="section" id="references">
-          <h2>References</h2>
-          <ul class="list-group">
+          <h2 onclick="$('#referenceList').toggle();toggleArrow();">References <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" id="arrow"></span></h2>
+          <ul class="list-group" id="referenceList">
             <li class="list-group-item"><a href="https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/">What Is GitHub, and What Is It Used For?</a></li>
             <li class="list-group-item"><a href="https://guides.github.com/">Github guides</a></li>
             <li class="list-group-item"><a href="https://git-scm.com/doc">Git</a></li>
@@ -149,5 +153,13 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    function toggleArrow() {
+      if ($("#arrow").attr("class") === "glyphicon glyphicon-triangle-top")
+        $("#arrow").attr("class", "glyphicon glyphicon-triangle-bottom");
+      else
+        $("#arrow").attr("class", "glyphicon glyphicon-triangle-top");
+    }
+  </script>
 </body>
 </html>
